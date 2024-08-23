@@ -1,9 +1,17 @@
-[us]
+[us] 
 us1
 us2
 us3
 
-[fs]
+[us:vars]
+apache_package=apache2
+php_package=libapache2-mod-php
+
+[fs] 
 fs1
 fs2
 fs3
+
+[fs:vars]
+apache_package=httpd
+php_package=php
