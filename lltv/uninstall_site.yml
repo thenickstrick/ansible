@@ -20,7 +20,7 @@
       name: simone
       state: absent
 
-- hosts: us
+- hosts: web_servers
   become: true
   tasks:
 
@@ -32,12 +32,14 @@
         state: absent
       when: ansible_distribution == "Ubuntu"
 
-- hosts: fs
+- hosts: db_servers
   become: true
   tasks:
-    - name: uninstall mariadb package from db servers
+    - name: uninstall packages from db servers
       ansible.builtin.dnf:
-        name: mariadb
+        name: 
+          - httpd
+          - mariadb
         state: absent
       when: ansible_distribution == "Fedora"
 
