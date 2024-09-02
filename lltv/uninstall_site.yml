@@ -39,6 +39,7 @@
       ansible.builtin.dnf:
         name: 
           - httpd
+          - php
           - mariadb
         state: absent
       when: ansible_distribution == "Fedora"
